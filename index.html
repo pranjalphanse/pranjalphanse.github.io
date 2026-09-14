@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pranjal Phanse — Senior Data Analyst</title>
+<meta name="description" content="Senior Data Analyst with 6+ years in fintech. Funnel and retention analytics, reconciliation, pipeline automation, and BI. Mumbai, India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#17211D;
+    --paper:#F2F4EF;
+    --oxblood:#7B2D3B;
+    --slate:#5D6862;
+    --rule:#D7DCD3;
+    --card:#FBFCFA;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *{animation:none !important; transition:none !important}
+  }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{max-width:980px;margin:0 auto;padding:0 28px}
+
+  a{color:var(--oxblood);text-underline-offset:3px}
+  a:focus-visible{outline:2px solid var(--oxblood);outline-offset:3px;border-radius:2px}
+
+  /* ---------- hero ---------- */
+  header{padding:72px 0 8px}
+  h1{
+    font-family:"Newsreader",Georgia,serif;
+    font-weight:400;
+    font-size:clamp(2.6rem,6vw,4.1rem);
+    line-height:1.02;
+    letter-spacing:-.018em;
+    margin:0 0 14px;
+  }
+  .tagline{
+    font-size:clamp(1.02rem,2.1vw,1.2rem);
+    color:var(--slate);
+    max-width:56ch;
+    margin:0 0 26px;
+  }
+  .contact{
+    display:flex;flex-wrap:wrap;gap:10px 22px;
+    font-size:.93rem;padding:0;margin:0;list-style:none;
+  }
+  .contact a{text-decoration:none;border-bottom:1px solid rgba(123,45,59,.32);padding-bottom:1px}
+  .contact a:hover{border-bottom-color:var(--oxblood)}
+  .contact .plain{color:var(--slate)}
+
+  /* ---------- the anomaly figure ---------- */
+  .figure{
+    margin:52px 0 0;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:26px 0 22px;
+  }
+  .figure svg{width:100%;height:auto;display:block;max-width:660px}
+  .trace{
+    fill:none;
+    stroke:var(--slate);
+    stroke-width:1.4;
+    opacity:.42;
+    stroke-linejoin:round;
+    stroke-linecap:round;
+  }
+  .trace.lead{stroke:var(--ink);opacity:.78;stroke-width:1.8}
+  .axis{stroke:var(--rule);stroke-width:1}
+  .tick{fill:var(--slate);font-size:10px;font-family:"IBM Plex Sans",sans-serif}
+  .flag{stroke:var(--oxblood);stroke-width:1.2;stroke-dasharray:3 3}
+  .flagdot{fill:var(--oxblood)}
+  .figcap{
+    margin:18px 0 0;
+    font-size:.94rem;
+    color:var(--slate);
+    max-width:62ch;
+  }
+  .figcap strong{color:var(--ink);font-weight:500}
+
+  @media (prefers-reduced-motion: no-preference){
+    .trace{
+      stroke-dasharray:1400;
+      stroke-dashoffset:1400;
+      animation:draw 1.5s cubic-bezier(.22,.61,.36,1) forwards;
+    }
+    .trace:nth-child(2){animation-delay:.05s}
+    .trace:nth-child(3){animation-delay:.1s}
+    .trace:nth-child(4){animation-delay:.15s}
+    .trace:nth-child(5){animation-delay:.2s}
+    .trace:nth-child(6){animation-delay:.25s}
+    .annot{opacity:0;animation:fade .5s ease 1.5s forwards}
+  }
+  @keyframes draw{to{stroke-dashoffset:0}}
+  @keyframes fade{to{opacity:1}}
+
+  /* ---------- sections ---------- */
+  section{padding:60px 0;border-bottom:1px solid var(--rule)}
+  section:last-of-type{border-bottom:none}
+
+  .grid{display:grid;grid-template-columns:158px 1fr;gap:34px}
+  @media (max-width:740px){.grid{grid-template-columns:1fr;gap:16px}}
+
+  .rail{
+    font-size:.82rem;
+    color:var(--slate);
+    letter-spacing:.02em;
+    padding-top:5px;
+  }
+  h2{
+    font-family:"Newsreader",Georgia,serif;
+    font-weight:400;
+    font-size:1.62rem;
+    margin:0 0 4px;
+    letter-spacing:-.01em;
+  }
+
+  .lede{font-size:1.06rem;max-width:64ch;margin:0 0 4px}
+  .body p{max-width:64ch;margin:0 0 16px}
+  .body p:last-child{margin-bottom:0}
+
+  /* ---------- work entries ---------- */
+  .entry{padding:24px 0;border-top:1px solid var(--rule)}
+  .entry:first-of-type{border-top:none;padding-top:0}
+  .entry h3{
+    font-family:"Newsreader",Georgia,serif;
+    font-weight:500;
+    font-size:1.2rem;
+    margin:0 0 10px;
+    letter-spacing:-.005em;
+  }
+  .entry dl{margin:0;display:grid;grid-template-columns:92px 1fr;gap:7px 16px}
+  @media (max-width:520px){.entry dl{grid-template-columns:1fr;gap:2px 0}}
+  .entry dt{
+    color:var(--oxblood);
+    font-size:.78rem;
+    font-weight:600;
+    letter-spacing:.03em;
+    padding-top:4px;
+  }
+  @media (max-width:520px){.entry dt{padding-top:10px}}
+  .entry dd{margin:0;max-width:60ch;font-size:.97rem}
+
+  /* ---------- toolkit ---------- */
+  .tools{display:grid;gap:18px}
+  .toolrow{display:grid;grid-template-columns:170px 1fr;gap:18px;align-items:baseline}
+  @media (max-width:620px){.toolrow{grid-template-columns:1fr;gap:2px}}
+  .toolrow dt{font-weight:600;font-size:.92rem}
+  .toolrow dd{margin:0;color:var(--slate);font-size:.95rem;max-width:60ch}
+
+  /* ---------- roles ---------- */
+  .role{display:grid;grid-template-columns:1fr auto;gap:6px 20px;padding:15px 0;border-top:1px solid var(--rule);align-items:baseline}
+  .role:first-child{border-top:none;padding-top:0}
+  .role .what{font-weight:500}
+  .role .where{color:var(--slate);font-size:.93rem;grid-column:1/-1;margin-top:-4px}
+  .role .when{color:var(--slate);font-size:.88rem;white-space:nowrap}
+  @media (max-width:520px){
+    .role{grid-template-columns:1fr}
+    .role .when{grid-row:3}
+  }
+
+  /* ---------- closing ---------- */
+  .closing{padding:64px 0 88px}
+  .closing h2{font-size:2rem;margin-bottom:12px}
+  .closing p{max-width:56ch;color:var(--slate);margin:0 0 26px}
+  .actions{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{
+    display:inline-block;
+    padding:11px 22px;
+    background:var(--ink);
+    color:var(--paper);
+    text-decoration:none;
+    font-size:.94rem;
+    font-weight:500;
+    border-radius:2px;
+  }
+  .btn:hover{background:var(--oxblood)}
+  .btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:var(--paper)}
+
+  footer{
+    border-top:1px solid var(--rule);
+    padding:22px 0 40px;
+    font-size:.85rem;
+    color:var(--slate);
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <h1>Pranjal Phanse</h1>
+    <p class="tagline">Senior Data Analyst, six years in retail investing. I work on acquisition funnels, retention, reconciliation, and the pipelines underneath them — mostly on finding the thing nobody asked about.</p>
+    <ul class="contact">
+      <li><a href="mailto:pranjalphanse@gmail.com">pranjalphanse@gmail.com</a></li>
+      <li><a href="tel:+919892817829">+91 98928 17829</a></li>
+      <li><a href="https://www.linkedin.com/in/pranjal-phanse/">LinkedIn</a></li>
+      <li><a href="https://github.com/pranjalphanse/">GitHub</a></li>
+      <li class="plain">Mumbai, India</li>
+    </ul>
+
+    <figure class="figure">
+      <svg viewBox="0 0 620 190" role="img" aria-label="Line chart of six acquisition channels by hour. All six rise through the day and drop sharply in the final hour.">
+        <line class="axis" x1="40" y1="168" x2="600" y2="168"></line>
+        <g>
+          <polyline class="trace lead" points="40,105 76,131 112,147 148,152 184,154 220,152 256,142 292,121 328,105 364,79 400,64 436,48 472,38 508,40 544,46 580,116"></polyline>
+          <polyline class="trace" points="40,109 76,133 112,148 148,153 184,154 220,153 256,143 292,124 328,109 364,85 400,70 436,56 472,46 508,49 544,54 580,119"></polyline>
+          <polyline class="trace" points="40,113 76,135 112,149 148,153 184,154 220,153 256,144 292,126 328,113 364,91 400,77 436,64 472,55 508,57 544,62 580,122"></polyline>
+          <polyline class="trace" points="40,117 76,137 112,150 148,154 184,155 220,154 256,146 292,129 328,117 364,96 400,84 436,71 472,63 508,65 544,69 580,125"></polyline>
+          <polyline class="trace" points="40,121 76,139 112,151 148,154 184,155 220,154 256,147 292,132 328,121 364,102 400,90 436,79 472,72 508,73 544,77 580,128"></polyline>
+          <polyline class="trace" points="40,124 76,141 112,152 148,155 184,156 220,155 256,148 292,135 328,124 364,107 400,97 436,87 472,80 508,82 544,85 580,131"></polyline>
+        </g>
+        <g class="annot">
+          <line class="flag" x1="580" y1="26" x2="580" y2="140"></line>
+          <circle class="flagdot" cx="580" cy="116" r="3.2"></circle>
+          <text class="tick" x="572" y="20" text-anchor="end" fill="#7B2D3B">all six, same hour</text>
+        </g>
+        <text class="tick" x="40" y="182">00:00</text>
+        <text class="tick" x="320" y="182" text-anchor="middle">hour of day</text>
+        <text class="tick" x="600" y="182" text-anchor="end">15:00</text>
+      </svg>
+      <figcaption class="figcap">Six acquisition channels, hour by hour. The last bar of every day fell off a cliff — in all six at once. Real demand doesn't move that symmetrically, so I treated it as a data problem. The final hourly partition was being read before upstream writes landed. <strong>Fixed at the process level, not the report.</strong></figcaption>
+    </figure>
+  </header>
+
+  <section id="about">
+    <div class="grid">
+      <div class="rail">What I do</div>
+      <div class="body">
+        <p class="lede">I've spent six years at Upstox, one of India's largest retail investing platforms, as the analyst sitting between raw platform data and the people making decisions on it.</p>
+        <p>Most of the work falls into three buckets. Figuring out where users drop off and why — funnels, cohorts, retention, churn. Making sure the numbers are right before anyone acts on them — reconciliation, validation, anomaly detection. And removing the manual work that eats analyst time, so there's room left for actual investigation.</p>
+        <p>The part I care about most is the second one. A dashboard nobody trusts is worse than no dashboard, and a plausible-looking number that's quietly wrong is the most expensive thing in analytics. I'd rather chase why a figure moved than ship a chart that says it did.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="grid">
+      <div class="rail">Selected work</div>
+      <div>
+
+        <div class="entry">
+          <h3>Reconciliation and detection logic</h3>
+          <dl>
+            <dt>Problem</dt>
+            <dd>Transactional charges weren't reconciling against expected delivery. Individually small enough to look like rounding, which is why nobody had flagged them.</dd>
+            <dt>Constraint</dt>
+            <dd>No reliable ground truth to validate against.</dd>
+            <dt>Approach</dt>
+            <dd>Pulled a longer window and found the pattern was systemic, not random. Quantified frequency and what the false-positive rate would be if we built detection on it — a noisy alert is worse than none. Documented thresholds and edge cases, then shipped the detection logic with engineering rather than handing over a notebook.</dd>
+            <dt>Outcome</dt>
+            <dd>Stopped ongoing revenue leakage, and the same break is now caught automatically instead of found by hand.</dd>
+          </dl>
+        </div>
+
+        <div class="entry">
+          <h3>Intraday funnel monitoring</h3>
+          <dl>
+            <dt>Problem</dt>
+            <dd>Acquisition performance was only visible the next morning, so decisions about spend were always a day behind.</dd>
+            <dt>Approach</dt>
+            <dd>Built hour-by-hour tracking across six channels through the full funnel — lead through verification to activated account — with day-over-day and week-over-week comparison, plus written commentary so readers got an interpretation rather than a wall of numbers.</dd>
+            <dt>Outcome</dt>
+            <dd>Same-day optimisation instead of next-day reporting. It also surfaced a mid-funnel conversion decay isolated to specific hours and specific traffic, invisible in daily aggregates, which redirected spend.</dd>
+          </dl>
+        </div>
+
+        <div class="entry">
+          <h3>Activation funnel diagnostic</h3>
+          <dl>
+            <dt>Problem</dt>
+            <dd>Multi-step onboarding was losing users, but the aggregate numbers didn't show where.</dd>
+            <dt>Approach</dt>
+            <dd>Stepped through the journey stage by stage and by channel to isolate where the drop actually happened, then traced it to cause rather than stopping at the observation.</dd>
+            <dt>Outcome</dt>
+            <dd>A 15% improvement in activation once addressed. I then turned the finding into a live monitoring framework tracking leading indicators, so the same class of issue gets caught in flight.</dd>
+          </dl>
+        </div>
+
+        <div class="entry">
+          <h3>Reporting automation, 25 datasources</h3>
+          <dl>
+            <dt>Problem</dt>
+            <dd>Twenty-five recurring extracts were being run by hand every week, and the manual steps introduced errors of their own.</dd>
+            <dt>Constraint</dt>
+            <dd>Replacing the stack wasn't on the table, and the outputs had to keep landing in the same places people already worked.</dd>
+            <dt>Approach</dt>
+            <dd>Built one modular SQL and Python architecture reading from a versioned query folder, scheduled and delivering into Sheets and Slack — rather than a new tool or a pile of one-off scripts.</dd>
+            <dt>Outcome</dt>
+            <dd>Recurring reporting effort down about 25%, a persistent class of manual error gone, and analyst time freed for investigation work.</dd>
+          </dl>
+        </div>
+
+        <div class="entry">
+          <h3>Propensity model, derivatives users</h3>
+          <dl>
+            <dt>Problem</dt>
+            <dd>Outreach was undifferentiated — everyone got contacted the same way regardless of how likely they were to engage.</dd>
+            <dt>Approach</dt>
+            <dd>Built a Gradient Boosting model scoring users by likely engagement and frequency, owning the feature engineering, validation, and post-deployment monitoring. Made the case for the approach in business terms before building it.</dd>
+            <dt>Outcome</dt>
+            <dd>Prioritised outreach in place of blanket contact, with the model's performance tracked after launch rather than assumed.</dd>
+          </dl>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="toolkit">
+    <div class="grid">
+      <div class="rail">Toolkit</div>
+      <div>
+        <dl class="tools">
+          <div class="toolrow">
+            <dt>Query and analysis</dt>
+            <dd>SQL — six years daily, on very large tables with real cost awareness. Trino/Presto, AWS Athena, Redshift, BigQuery, PostgreSQL, MySQL.</dd>
+          </div>
+          <div class="toolrow">
+            <dt>Python</dt>
+            <dd>pandas, NumPy, SciPy, scikit-learn. Reporting automation, classification and propensity models, reproducible notebooks.</dd>
+          </div>
+          <div class="toolrow">
+            <dt>Dashboards</dt>
+            <dd>Tableau, down to TWB and published datasource level. Power BI, Metabase, Looker, AWS QuickSight.</dd>
+          </div>
+          <div class="toolrow">
+            <dt>Pipelines</dt>
+            <dd>Airflow, Rundeck, ETL/ELT design, REST APIs (Slack, Google Sheets service accounts), AWS S3 and Glue, Git.</dd>
+          </div>
+          <div class="toolrow">
+            <dt>Methods</dt>
+            <dd>A/B and multivariate testing, cohort and retention analysis, forecasting, anomaly detection, segmentation, root-cause investigation.</dd>
+          </div>
+          <div class="toolrow">
+            <dt>AI in the workflow</dt>
+            <dd>Claude and Copilot daily for query drafting, QA and documentation — with independent verification. I can explain the anomaly, the cause and the fix without pointing at the tool.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="grid">
+      <div class="rail">Where I've worked</div>
+      <div>
+        <div class="role">
+          <span class="what">Senior Data Analyst</span>
+          <span class="when">Mar 2020 — present</span>
+          <span class="where">Upstox (RKSV Securities), Mumbai</span>
+        </div>
+        <div class="role">
+          <span class="what">Machine Learning Intern</span>
+          <span class="when">Jul — Sep 2019</span>
+          <span class="where">Aditech Softwares, Mumbai</span>
+        </div>
+        <div class="role">
+          <span class="what">Software Developer</span>
+          <span class="when">Jan 2018 — Jan 2019</span>
+          <span class="where">GM Consultancy Services, Mumbai</span>
+        </div>
+        <div class="role">
+          <span class="what">MCA, Computer Applications</span>
+          <span class="when">2015 — 2018</span>
+          <span class="where">University of Mumbai &middot; BSc Information Technology, 2012 — 2015</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="grid">
+      <div class="rail">Certifications</div>
+      <div class="body">
+        <p>Data Science Master Program — statistics, predictive modelling and machine learning.<br>
+        Introduction to AI and Machine Learning on Google Cloud.<br>
+        Advanced Google Analytics — measurement and attribution.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="closing">
+    <h2>Open to new work</h2>
+    <p>Analytics engineering, product analytics, or anywhere data quality is treated as the product rather than the overhead. Happy to talk through any of the work above in detail.</p>
+    <div class="actions">
+      <a class="btn" href="mailto:pranjalphanse@gmail.com">Email me</a>
+      <a class="btn ghost" href="Pranjal_Phanse_Resume.pdf">Download CV</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/pranjal-phanse/">LinkedIn</a>
+    </div>
+  </div>
+
+  <footer>
+    Mumbai, India &middot; pranjalphanse@gmail.com &middot; +91 98928 17829
+  </footer>
+
+</div>
+
+</body>
+</html>
